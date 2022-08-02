@@ -15,7 +15,6 @@ recordRoutes.route("/record").get(function (req, res) {
 });
 
 
-
 // find one record based on id
 recordRoutes.route("/record/:id").get((req, res) => {
     let db_connect = dbo.getDb();
@@ -25,7 +24,6 @@ recordRoutes.route("/record/:id").get((req, res) => {
         res.json(project);
     });
 });
-
 
 
 recordRoutes.route("/record/add").post((req, res) => {
@@ -43,7 +41,6 @@ recordRoutes.route("/record/add").post((req, res) => {
         res.json(result);
     });
 });
-
 
 
 recordRoutes.route("/update/:id").post((req, res) => {
@@ -78,9 +75,8 @@ recordRoutes.route("/delete/:id").delete((req, res) => {
 });
 
 
-
-
 recordRoutes.route("/:projectId/task/update").post((req, res) => {
+
     let db_connect = dbo.getDb();
     let query = { _id: ObjectId( req.params.projectId ) }
     let newValues = {
@@ -93,6 +89,7 @@ recordRoutes.route("/:projectId/task/update").post((req, res) => {
         if (err) throw err;
         res.json(result);
     });
+    console.log("finish update");
 });
 
 
