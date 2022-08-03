@@ -89,7 +89,6 @@ recordRoutes.route("/:projectId/task/update").post((req, res) => {
         if (err) throw err;
         res.json(result);
     });
-    console.log("finish update");
 });
 
 
