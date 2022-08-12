@@ -8,6 +8,7 @@ app.use(express.json());
 
 
 app.use(require("./routes/record"));
+app.use(require("/routes/users"));
 
 const dbo = require("./db/conn");
 

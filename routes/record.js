@@ -46,14 +46,14 @@ recordRoutes.route("/record/add").post((req, res) => {
 recordRoutes.route("/update/:id").post((req, res) => {
     let db_connect = dbo.getDb();
     let query = { _id: ObjectId( req.params.id ) };
+    // FIXME: converting from id to ObjectId --> cause error            id is already in objectId format, so no need to convert it again
 
     let newValues = {
         $set: {
             name: req.body.name,
             leader: req.body.leader,
-            collaborators: req.body.collaborators,
             description: req.body.description,
-            tasks: req.body.tasks
+            collaborators: req.body.collaborators
         }
     };
 
