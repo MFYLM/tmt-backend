@@ -15,9 +15,7 @@ taskRoutes.route("/project/:id/task").get((req, res) => {
 });
 
 
-
 taskRoutes.route("project/:id")
-
 
 
 module.exports = taskRoutes;
